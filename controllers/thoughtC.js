@@ -10,7 +10,8 @@ const thoughtControl = {
         }
     },
 
-    const: getThoughtById = async ({ params }, res) => {
+    async async getThoughtById({ params }, res) 
+{
         try {
             const thought = await Thought.findOne({ _id: params.id });
             if (!thought) {
@@ -18,13 +19,15 @@ const thoughtControl = {
                 return;
             } else {
                 res.json(thought);
-            } try  {
+            } try {
                 res.status(400).json(err);
             }
-         catch (err) {
-            res.status(400).json(err);
+            catch (err) {
+                res.status(400).json(err);
+            }
         }
     },
+        
     
     
     async createThought({ body }, req, res) {
@@ -95,6 +98,7 @@ const thoughtControl = {
                         res.status(400).json(err);
                     }
                 }
+            }
                 
 
                 thoughtControl;
